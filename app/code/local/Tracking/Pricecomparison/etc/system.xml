@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+/**
+ * Copyright 2015 Tjard Henrik Kügler
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+  -->
+
+<config>
+	<tabs>
+		<pricecomparison_config>
+			<label>Price Comparison</label>
+			<sort_order>100</sort_order>
+		</pricecomparison_config>
+	</tabs>
+	<sections>
+		<tracking_pricecomparison_config>
+			<label>Settings</label>
+			<tab>pricecomparison_config</tab>
+			<sort_order>10</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_website>1</show_in_website>
+			<show_in_store>1</show_in_store>
+			<groups>
+				<general>
+					<label>General Settings</label>
+					<sort_order>10</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<status>
+							<label>Enable this module</label>
+							<frontend_type>select</frontend_type>
+							<source_model>
+								adminhtml/system_config_source_enabledisable
+							</source_model>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status>
+						<attributeSetName>
+							<label>Name for the attributeset this modul uses</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>20</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment><![CDATA[
+								Don't change this unless there is a really good reason!
+							]]></comment>
+						</attributeSetName>
+						<attributeGroupName>
+							<label>Name for the attributegroup this modul uses</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>30</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment><![CDATA[
+								Don't change this unless there is a really good reason!
+							]]></comment>
+						</attributeGroupName>
+					</fields>
+				</general>
+				<cookie>
+					<label>Cookie Settings</label>
+					<sort_order>20</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<key>
+							<label>Cookie Key</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment><![CDATA[
+								The key/name for the cookie
+							]]></comment>
+						</key>
+						<urlKey>
+							<label>URL Trigger key</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>20</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment><![CDATA[
+								The URL parameter that is used to indicate
+								that the customer ist redirected from a
+								price comparison site.
+							]]></comment>
+						</urlKey>
+						<timeout>
+							<label>Cookie Timeout</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>30</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment><![CDATA[
+								This is the amount of time an affiliate cookie will last, in days.
+								Set null to set the cookie as session cookie.
+							]]></comment>
+						</timeout>
+					</fields>
+				</cookie>
+			</groups>
+		</tracking_pricecomparison_config>
+	</sections>
+</config>

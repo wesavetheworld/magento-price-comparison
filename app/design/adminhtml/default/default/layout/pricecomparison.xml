@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config>
+	<pricecomparison_catalog_affiliates_index>
+		<update handle="editor"/>
+		<reference name="content">
+			<block type="pricecomparison/adminhtml_catalog_affiliates_container" name="pricecomparison_container" as="container"/>
+		</reference>
+		<reference name="left">
+			<block type="pricecomparison/adminhtml_catalog_affiliates_tabs"/>
+		</reference>
+	</pricecomparison_catalog_affiliates_index>
+</config>

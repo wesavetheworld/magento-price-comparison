@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+/**
+ * Copyright 2015 Tjard Henrik Kügler
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+  -->
+
+<config>
+	<modules>
+		<Tracking_Pricecomparison>
+			<version>0.1.0</version>
+		</Tracking_Pricecomparison>
+	</modules>
+	<frontend>
+		<events>
+			<catalog_product_load_after>
+				<observers>
+					<pricecomparison>
+						<type>singleton</type>
+						<class>pricecomparison/observer</class>
+						<method>setPricecomparisonProductView</method>
+					</pricecomparison>
+				</observers>
+			</catalog_product_load_after>
+			<catalog_product_collection_load_after>
+				<observers>
+					<pricecomparison>
+						<type>singleton</type>
+						<class>pricecomparison/observer</class>
+						<method>setPricecomparisonCategoryView</method>
+					</pricecomparison>
+				</observers>
+			</catalog_product_collection_load_after>
+			<checkout_cart_product_add_after>
+				<observers>
+					<pricecomparison>
+						<type>singleton</type>
+						<class>pricecomparison/observer</class>
+						<method>setPricecomparisonCartView</method>
+					</pricecomparison>
+				</observers>
+			</checkout_cart_product_add_after>
+		</events>
+	</frontend>
+	<global>
+		<blocks>
+			<pricecomparison>
+				<class>Tracking_Pricecomparison_Block</class>
+			</pricecomparison>
+		</blocks>
+		<models>
+			<pricecomparison>
+				<class>Tracking_Pricecomparison_Model</class>
+			</pricecomparison>
+		</models>
+		<helpers>
+			<pricecomparison>
+				<class>Tracking_Pricecomparison_Helper</class>
+			</pricecomparison>
+		</helpers>
+		<resources>
+			<pricecomparison_setup>
+				<setup>
+					<module>Tracking_Pricecomparison</module>
+					<class>Mage_Eav_Model_Entity_Setup</class>
+				</setup>
+			</pricecomparison_setup>
+		</resources>
+	</global>
+	<default>
+		<tracking_pricecomparison_config>
+			<general>
+				<status>1</status>
+				<attributeSetName>Pricecomparison Set</attributeSetName>
+				<attributeGroupName>Pricecomparison Affiliates</attributeGroupName>
+			</general>
+			<cookie>
+				<key>affiliate_source</key>
+				<urlKey>pcs</urlKey>
+				<timeout>null</timeout>
+			</cookie>
+		</tracking_pricecomparison_config>
+	</default>
+	<admin>
+		<routers>
+			<pricecomparison>
+				<use>admin</use>
+				<args>
+					<module>Tracking_Pricecomparison</module>
+					<frontName>pricecomparison</frontName>
+					<modules>
+						<Tracking_Pricecomparison before="Mage_Adminhtml">Tracking_Pricecomparison_Adminhtml</Tracking_Pricecomparison>
+					</modules>
+				</args>
+			</pricecomparison>
+		</routers>
+	</admin>
+	<adminhtml>
+		<layout>
+			<updates>
+				<pricecomparison>
+					<file>pricecomparison.xml</file>
+				</pricecomparison>
+			</updates>
+		</layout>
+	</adminhtml>
+</config>
